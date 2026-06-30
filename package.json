@@ -1,0 +1,28 @@
+{
+  "name": "red-contrib-smp-screen",
+  "version": "1.0.0",
+  "description": "\"test node\"",
+  "main": "smp-screen-output.js",
+  "node-red": {
+    "nodes": {
+      "smp-screen-node": "smp-screen.js",
+      "smp-screen-output": "smp-screen-output.js" 
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linhuiyan/node-red-contrib-smp-screen.git"
+  },
+  "keywords": [
+    "\"node-red\""
+  ],
+  "author": "lhy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linhuiyan/node-red-contrib-smp-screen/issues"
+  },
+  "homepage": "https://github.com/linhuiyan/node-red-contrib-smp-screen#readme"
+}

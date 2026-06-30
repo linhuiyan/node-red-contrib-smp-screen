@@ -1,0 +1,42 @@
+<script type="text/html" data-template-name="smp-screen-output">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> 节点名称</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label><i class="fa fa-list"></i> 选择要输出的变量:</label>
+        <div style="margin-left: 20px; margin-top: 10px;">
+            <label style="width: auto;"><input type="checkbox" id="node-input-showAh" style="display: inline-block; width: auto; vertical-align: top;"> 电池容量 (Ah)</label>
+        </div>
+        <div style="margin-left: 20px;">
+            <label style="width: auto;"><input type="checkbox" id="node-input-showRate" style="display: inline-block; width: auto; vertical-align: top;"> 充电率 (Rate)</label>
+        </div>
+        <div style="margin-left: 20px;">
+            <label style="width: auto;"><input type="checkbox" id="node-input-showVolt" style="display: inline-block; width: auto; vertical-align: top;"> 低电压告警 (Volt)</label>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="smp-screen-output">
+    <p>这是一个数据纯输出节点。它会全自动监听 Qt D-Bus 信号，并根据你的勾选，按需把变量输出到右侧。</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('smp-screen-output',{
+        category: 'TEST',      // 放在左侧的分类栏名称
+        color: '#E2D9F3',          // 换个漂亮的浅紫色，方便和原来的控制节点区分
+        defaults: {
+            name: {value:""},
+            showAh: {value: true},
+            showRate: {value: true},
+            showVolt: {value: true}
+        },
+        inputs: 0,                 // 🌟 核心：设为 0，左边就没有小圆点，不能输入
+        outputs: 1,                // 🌟 核心：设为 1，右边有小圆点，负责输出
+        icon: "arrow-png",         // 节点图标
+        label: function() {
+            return this.name || "信号接收器";
+        }
+    });
+</script>

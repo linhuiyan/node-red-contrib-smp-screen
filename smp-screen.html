@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    RED.nodes.registerType('smp-screen-node', {
+        category: '测试项目',       // 左侧工具栏会出现的新分类名字
+        color: '#3F51B5',              // 节点积木的颜色（蓝色）
+        defaults: {
+            name: { value: "" },
+            action: { value: "setEL6Enable" } // 默认下拉框选项
+        },
+        inputs: 1,                     // 左边小圆点（接收 Node-RED 传来的数据）
+        outputs: 1,                    // 右边小圆点（把数据往下传）
+        icon: "font-awesome/fa-television", // 节点图标（显示一个电视/屏幕图标）
+        label: function() {
+            return this.name || "屏幕控制";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="smp-screen-node">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> 节点名称</label>
+        <input type="text" id="node-input-name" placeholder="自定义节点名称">
+    </div>
+    <div class="form-row">
+        <label for="node-input-action"><i class="fa fa-cog"></i> 控制动作</label>
+        <select id="node-input-action">
+            <option value="setEL6Enable">设置EL6使能 (setEL6Enable)</option>
+            <option value="getBattNum">获取电池数量 (getBattNum)</option>
+        </select>
+    </div>
+</script>
