@@ -1,5 +1,5 @@
 {
-  "name": "red-contrib-smp-screen",
+  "name": "node-red-contrib-smp-screen-l7",
   "version": "1.0.0",
   "description": "\"test node\"",
   "main": "smp-screen-output.js",
